@@ -1,5 +1,6 @@
 import winston from 'winston'
 import { IS_PRODUCTION } from '../config/config'
+import Sentry from 'winston-transport-sentry-node'
 
 const enumerateErrorFormat = winston.format((info) => {
   if (info instanceof Error) {
@@ -8,7 +9,6 @@ const enumerateErrorFormat = winston.format((info) => {
   return info
 })
 
-const Sentry = require('winston-transport-sentry-node').default;
 
 const options = {
   //todo add sentry
